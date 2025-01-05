@@ -16,20 +16,20 @@ h1 {
 /* ปรับขนาดสำหรับหน้าจอที่มีความกว้างไม่เกิน 768px (โทรศัพท์มือถือและแท็บเล็ต) */
 @media (max-width: 768px) {
   h1 {
-    font-size: 2rem;
+    font-size: 2rem; /* ลดขนาดฟอนต์ของ h1 สำหรับมือถือ */
   }
 
   .color-wheel-container {
-    width: 200px;
+    width: 200px; /* ลดขนาดวงล้อสี */
     height: 200px;
   }
 
   .output-box {
-    flex-direction: column;
+    flex-direction: column; /* เปลี่ยนจากแนวนอนเป็นแนวตั้ง */
   }
 
   .color-box {
-    width: 80px;
+    width: 80px; /* ลดขนาดของกล่องสี */
     height: 80px;
   }
 }
