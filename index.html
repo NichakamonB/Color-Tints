@@ -55,9 +55,43 @@
       margin-top: 10px;
     }
 
+    /* แถบด้านขวาบน */
+    .top-bar {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background-color: #333;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px 0 0 0;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .top-bar button {
+      background-color: #ff6347;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .top-bar button:hover {
+      background-color: #ff4500;
+    }
+
   </style>
 </head>
 <body>
+
+  <!-- แถบด้านขวาบน -->
+  <div class="top-bar">
+    <button onclick="register()">Register</button>
+    <button onclick="login()">Login</button>
+  </div>
 
   <h1>Color Matching</h1>
 
@@ -90,6 +124,17 @@
   </div>
 
   <script>
+    // ฟังก์ชันสำหรับ Register และ Login
+    function register() {
+      alert("เปิดหน้าต่าง Register");
+      // สามารถเพิ่มลิงค์หรือฟังก์ชันเพื่อไปยังหน้าลงทะเบียนได้ที่นี่
+    }
+
+    function login() {
+      alert("เปิดหน้าต่าง Login");
+      // สามารถเพิ่มลิงค์หรือฟังก์ชันเพื่อไปยังหน้าล็อกอินได้ที่นี่
+    }
+
     const colorWheel = document.getElementById('color-wheel');
     const selectedColorBox = document.getElementById('selected-color');
     const tintedColorBox1 = document.getElementById('tinted-color-1');
