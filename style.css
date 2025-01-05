@@ -1,0 +1,58 @@
+/* กำหนดสไตล์พื้นฐานของ body */
+body {
+  font-family: 'Arial', sans-serif; /* กำหนดฟอนต์ */
+  background-color: hsl(120, 100%, 75%); /* เปลี่ยนสีพื้นหลังให้มีความอ่อนลง */
+  color: #333; /* สีของข้อความ */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* จัดตำแหน่งให้อยู่กลางแนวนอน */
+  align-items: center; /* จัดตำแหน่งให้อยู่กลางแนวตั้ง */
+  height: 100vh; /* ใช้ความสูงเต็มหน้าจอ */
+  text-align: center;
+}
+
+/* สไตล์ของหัวข้อ */
+h1 {
+  color: #2c3e50; /* สีของข้อความหัวข้อ */
+  font-size: 2rem; /* ขนาดฟอนต์ */
+  margin-bottom: 20px;
+}
+
+/* กำหนดสไตล์ของวงกลมสี */
+.color-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; /* ทำให้เป็นวงกลม */
+  cursor: pointer; /* เปลี่ยนเคอร์เซอร์เมื่อเลื่อนเมาส์ */
+  transition: background-color 0.3s ease; /* เพิ่มเอฟเฟกต์การเปลี่ยนสี */
+  margin-bottom: 20px;
+  background-color: hsl(120, 100%, 50%); /* ใช้สีพื้นฐาน */
+}
+
+/* สไตล์สำหรับกล่องสี */
+.color-box {
+  width: 100px;
+  height: 100px;
+  margin: 0 10px;
+  border-radius: 10px; /* มุมกล่องมีความโค้ง */
+  transition: transform 0.3s ease; /* เพิ่มเอฟเฟกต์เมื่อเปลี่ยนตำแหน่ง */
+  background-color: hsl(120, 100%, 65%); /* ใช้สีที่อ่อนลง */
+}
+
+/* กำหนดสไตล์เมื่อทำการโฮเวอร์ */
+.color-circle:hover {
+  background-color: hsl(120, 100%, 40%); /* เปลี่ยนสีเมื่อเมาส์อยู่เหนือวงกลม */
+}
+
+/* สไตล์สำหรับการแสดงสีคู่ */
+.color-pair {
+  display: flex;
+  justify-content: center; /* จัดตำแหน่งให้อยู่กลาง */
+  margin-top: 20px;
+}
+
+/* เมื่อเลือกสีแล้วกล่องจะขยาย */
+.color-box:hover {
+  transform: scale(1.1); /* ขยายขนาดกล่องสีเล็กน้อย */
+}
