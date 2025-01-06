@@ -16,8 +16,8 @@ if ($conn->connect_error) {
 // ตรวจสอบว่าได้ส่งข้อมูลมาในฟอร์มแล้วหรือยัง
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // รับข้อมูลจากฟอร์ม
-    $username = $_POST['username'];
-    $email = $_POST['email'];
+    $username = trim($_POST['username']);
+    $email = trim($_POST['email']);
     $password = $_POST['password'];
     $confirm_password = $_POST['confirm_password'];
 
@@ -47,4 +47,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // ดำเนินการบันทึกข้อมูล
             if ($stmt->execute()) {
-                echo "New record created successfully
+                echo "New record created successfully";
+                // Redirect after success
+                header("Location: success_page.php");
+                exit();
+            } else {
+                echo "Error: " . $stmt->error;
+            }
+
+            // ปิด statement
+            $stmt->close();
+        }
+
+        // ปิด email_check statement
+        $email_check->close();
+    }
+}
+
+// ปิดการเชื่อมต่อฐานข้อมูล
+$conn->close();
+?>
