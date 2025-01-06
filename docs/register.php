@@ -1,9 +1,9 @@
 <?php
 // การตั้งค่าการเชื่อมต่อฐานข้อมูล
-$servername = "localhost";  // หรือ IP ของเซิร์ฟเวอร์ MySQL
-$username = "root";         // ชื่อผู้ใช้ MySQL (ปรับตามที่คุณใช้)
-$password = "";             // รหัสผ่าน MySQL (หากมี)
-$dbname = "user_registration"; // ชื่อฐานข้อมูลที่สร้าง
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "user_registration";
 
 // สร้างการเชื่อมต่อกับฐานข้อมูล
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -24,6 +24,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // ตรวจสอบให้แน่ใจว่ารหัสผ่านและยืนยันรหัสผ่านตรงกัน
     if ($password != $confirm_password) {
         echo "Password and confirm password do not match.";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "Invalid email format.";
+    } elseif (strlen($password) < 8) {
+        echo "Password must be at least 8 characters long.";
     } else {
         // ตรวจสอบว่าอีเมลมีในฐานข้อมูลหรือไม่
         $email_check = $conn->prepare("SELECT * FROM users WHERE email = ?");
@@ -43,20 +47,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // ดำเนินการบันทึกข้อมูล
             if ($stmt->execute()) {
-                echo "New record created successfully";
-            } else {
-                echo "Error: " . $stmt->error;
-            }
-
-            // ปิด statement
-            $stmt->close();
-        }
-
-        // ปิด email_check statement
-        $email_check->close();
-    }
-}
-
-// ปิดการเชื่อมต่อฐานข้อมูล
-$conn->close();
-?>
+                echo "New record created successfully
