@@ -97,17 +97,40 @@
 
   <div class="output-box">
     <div>
-      <h2>Selected Color</h2>
+      <h2>Pick a color</h2>
       <div id="selected-color" class="color-box" style="background-color: rgb(255, 0, 0);"></div>
       <p id="selected-color-code" class="color-code">#ff0000</p>
+    </div>
+
+    <div>
+      <h2>tints 70%</h2>
+      <div id="tinted-color-1" class="color-box" style="background-color: rgb(255, 0, 0);"></div>
+      <p id="tinted-color-1-code" class="color-code">#ff0000</p>
+    </div>
+
+    <div>
+      <h2>tints 50%</h2>
+      <div id="tinted-color-2" class="color-box" style="background-color: rgb(255, 0, 0);"></div>
+      <p id="tinted-color-2-code" class="color-code">#ff0000</p>
+    </div>
+
+    <div>
+      <h2>tints 30%</h2>
+      <div id="tinted-color-3" class="color-box" style="background-color: rgb(255, 0, 0);"></div>
+      <p id="tinted-color-3-code" class="color-code">#ff0000</p>
     </div>
   </div>
 
   <script>
     const colorWheel = document.getElementById('color-wheel');
     const selectedColorBox = document.getElementById('selected-color');
+    const tintedColorBox1 = document.getElementById('tinted-color-1');
+    const tintedColorBox2 = document.getElementById('tinted-color-2');
+    const tintedColorBox3 = document.getElementById('tinted-color-3');
     const selectedColorCode = document.getElementById('selected-color-code');
-
+    const tintedColorCode1 = document.getElementById('tinted-color-1-code');
+    const tintedColorCode2 = document.getElementById('tinted-color-2-code');
+    const tintedColorCode3 = document.getElementById('tinted-color-3-code');
     // Detect mouse movement on the color wheel
     colorWheel.addEventListener('mousemove', (event) => {
       const rect = colorWheel.getBoundingClientRect();
