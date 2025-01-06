@@ -1,0 +1,6 @@
+site_name: "My Website"
+database:
+  host: "localhost"
+  user: "root"
+  password: ""
+  name: "user_registration"
