@@ -50,4 +50,15 @@ function hexToRgb(hex) {
 // ฟังก์ชันแปลง RGB เป็น Hex
 function rgbToHex(r, g, b) {
   return "#" + (1 << 24 | r << 16 | g << 8 | b).toString(16).slice(1).toUpperCase();
+
+document.querySelector('form').addEventListener('submit', function(event) {
+  const password = document.querySelector('input[name="password"]').value;
+  const confirmPassword = document.querySelector('input[name="confirm_password"]').value;
+
+  if (password !== confirmPassword) {
+    alert('Passwords do not match!');
+    event.preventDefault(); // ยกเลิกการส่งฟอร์ม
+  }
+});
+
 }
