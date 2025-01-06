@@ -133,13 +133,14 @@
     const tintedColorCode3 = document.getElementById('tinted-color-3-code');
     // Detect mouse movement on the color wheel
     colorWheel.addEventListener('mousemove', (event) => {
-      const rect = colorWheel.getBoundingClientRect();
-      const x = event.clientX - rect.left - rect.width / 2;
-      const y = event.clientY - rect.top - rect.height / 2;
-      const angle = Math.atan2(y, x) * (180 / Math.PI) + 180; // Angle in degrees
-      const color = getColorAtAngle(angle);
-      updateSelectedColor(color);
-    });
+  const rect = colorWheel.getBoundingClientRect();
+  const x = event.clientX - rect.left - rect.width / 2;
+  const y = event.clientY - rect.top - rect.height / 2;
+  const angle = Math.atan2(y, x) * (180 / Math.PI) + 180; // Angle in degrees
+  const color = getColorAtAngle(angle);
+  updateColors(color); // เพิ่มการอัปเดตเฉดสี
+});
+
 
    // ฟังก์ชันในการหาค่าสีจากมุม
     function getColorAtAngle(angle) {
